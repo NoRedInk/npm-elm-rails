@@ -15,7 +15,7 @@ module Npm
           # do nothing:  no prep needed
         end
 
-        def evaluate(scope, locals, &block)
+        def evaluate(scope, _locals, &_block)
           Dir.chdir(elm_package_root) do
             ::Elm::Compiler.compile(file, elm_make_path: ELM_MAKE_PATH)
           end
